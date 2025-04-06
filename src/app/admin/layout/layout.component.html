@@ -1,0 +1,149 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav>
+      <div class="sidebar-top">
+        <!-- <span class="shrink-btn">
+          <i class='bx bx-chevron-left'></i>
+        </span> -->
+
+      </div>
+
+      <div class="search">
+        <i class='bx bx-search'></i>
+        <input type="text" class="hide" placeholder="Quick Search ...">
+      </div>
+
+      <div class="sidebar-links">
+
+        <ul>
+          <div class="active-tab"></div>
+          <li class="tooltip-element" data-tooltip="0">
+            <a href="/admin" class="" data-active="0">
+              <div class="icon">
+                <i class='bx bx-tachometer'></i>
+                <i class='bx bxs-tachometer'></i>
+              </div>
+              <span class="link hide">Dashboard</span>
+            </a>
+          </li>
+        </ul>
+        <h4 class="hide">Management</h4>
+
+        <ul>
+          <li class="tooltip-element" data-tooltip="5">
+            <a href="/admin/auth" data-active="4">
+              <div class="icon">
+                <i class='bx bx-notepad'></i>
+                <i class='bx bxs-notepad'></i>
+              </div>
+              <span class="link hide">Authorize</span>
+            </a>
+          </li>
+          <li class="tooltip-element" data-tooltip="2">
+            <a href="/admin/role" data-active="2">
+              <div class="icon">
+                <i class='bx bx-message-square-detail'></i>
+                <i class='bx bxs-message-square-detail'></i>
+              </div>
+              <span class="link hide">Roles</span>
+            </a>
+          </li>
+          <li class="tooltip-element" data-tooltip="3">
+            <a href="/admin/users" data-active="3">
+              <div class="icon">
+                <i class='bx bx-bar-chart-square'></i>
+                <i class='bx bxs-bar-chart-square'></i>
+              </div>
+              <span class="link hide">Users</span>
+            </a>
+          </li>
+        </ul>
+
+        <h4 class="hide">Sale</h4>
+
+        <ul>
+          <li class="tooltip-element" data-tooltip="1">
+            <a href="/admin/products" data-active="1">
+              <div class="icon">
+                <i class='bx bx-folder'></i>
+                <i class='bx bxs-folder'></i>
+              </div>
+              <span class="link hide">Products</span>
+            </a>
+          </li>
+          <li class="tooltip-element" data-tooltip="4">
+            <a href="/admin/orders" data-active="4">
+              <div class="icon">
+                <i class='bx bx-bar-chart-square'></i>
+                <i class='bx bxs-bar-chart-square'></i>
+              </div>
+              <span class="link hide">Orders</span>
+            </a>
+          </li>
+        </ul>
+
+
+
+        <h4 class="hide">Shortcuts</h4>
+
+        <ul>
+
+          <li class="tooltip-element" data-tooltip="1">
+            <a data-active="5">
+              <div class="icon">
+                <i class='bx bx-help-circle'></i>
+                <i class='bx bxs-help-circle'></i>
+              </div>
+              <span class="link hide">Help</span>
+            </a>
+          </li>
+          <li class="tooltip-element" data-tooltip="2">
+            <a data-active="6">
+              <div class="icon">
+                <i class='bx bx-cog'></i>
+                <i class='bx bxs-cog'></i>
+              </div>
+              <span class="link hide">Settings</span>
+            </a>
+          </li>
+          <div class="tooltip">
+            <span class="show">Tasks</span>
+            <span>Help</span>
+            <span>Settings</span>
+          </div>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="#" class="account tooltip-element" data-tooltip="0">
+          <i class='bx bx-user'></i>
+        </a>
+        <div class="admin-user tooltip-element" data-tooltip="1">
+          <div class="admin-profile hide">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="">
+            <div class="admin-info">
+              <h3>John Doe</h3>
+              <h5>Admin</h5>
+            </div>
+          </div>
+          <a href="#" class="log-out">
+            <i class='bx bx-log-out'></i>
+          </a>
+        </div>
+        <div class="tooltip">
+          <span class="show">John Doe</span>
+          <span>Logout</span>
+        </div>
+      </div>
+    </nav>
+
+
+    <main style="max-height: 578px;">
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+<!-- <div class="list-group">
+  <a class="list-group-item" style="color: white; background-color: rgba(0, 0, 0, 0.846);">Benzer Ürünler</a>
+
+
+  <a class="list-group-item list-group-item-action" href="~/@c.Url">@c.Name</a>
+
+
+</div>
+<div class="list-group">
+  <a class="list-group-item" style="color: white; background-color: rgba(0, 0, 0, 0.846);">Benzer Kategoriler</a>
+
+
+
+  <a class="list-group-item list-group-item-action" href="~/urunler/@c.Url">@c.Name</a>
+
+
+</div> -->
+
+
+
+<div class="row" style="margin-top: 2%;">
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+    <!-- <a class="link-secondary" [routerLink]="['/products', category]"
+      *ngFor="let category of product.categories">{{category}}
+    </a> -->
+  </div>
+</div>
+<div class="row" style="margin-top: 1%;">
+
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+    <div class="card">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+          <img class="card-img-top" style="width: 400px; margin: auto;" src={{link1}} alt="">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img class="card-img-top" style="width: 400px; margin: auto;" src={{link2}} alt="">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img class="card-img-top" style="width: 400px; margin: auto;" src={{link3}} alt="">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img class="card-img-top" style="width: 400px; margin: auto;" src={{link4}} alt="">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img class="card-img-top" style="width: 400px; margin: auto;" src={{link5}} alt="">
+        </ng-template>
+      </owl-carousel-o>
+
+    </div>
+  </div>
+  <div class="col-md-4 pt-5" style="background-color: #f5f5f5;">
+
+    <div class="card">
+      <div class="card-header">
+        <a href="/products/brands/{{product.brand}}" style="font-size: larger; color: rgb(217, 26, 26);">{{product.brand}}</a>
+        <hr>
+        <h4 class="card-title">{{product.name}}</h4>
+        <h3 class="card-title">{{product.price | currency}}</h3>
+
+      </div>
+    </div>
+    <br><br>
+    <div class="card" style="display: inline-flex;">
+      <div class="card-header">
+        <span style="color: skyblue;font-size: larger"><b>Saler : </b></span><a href="/saler/{{product.salerUsername}}"
+          style="font-size: larger; color: rgb(3, 94, 6);">{{product.salerUsername}}</a>
+      </div>
+    </div>
+    <br><br>
+
+    <br>
+    <a (click)="addToBasket()" class="btn btn-primary">Add To Cart</a>
+
+
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="card">
+
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button style="padding: 5px 9px;" type="button" class="btn btn-secondary">Description</button>
+        <button type="button" class="btn btn-secondary">Offers</button>
+        <button type="button" class="btn btn-secondary">Evaluations</button>
+        <button type="button" class="btn btn-secondary">Question&Answer</button>
+        <button type="button" class="btn btn-secondary">Payment</button>
+        <button type="button" class="btn btn-secondary">Shopping Loan</button>
+        <button type="button" class="btn btn-secondary">Cancellation and Return Conditions</button>
+      </div>
+
+      <div class="card-body">
+        <p>{{product.description}}</p>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>

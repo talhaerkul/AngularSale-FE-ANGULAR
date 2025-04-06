@@ -1,0 +1,6 @@
+<mat-drawer-container>
+  <!-- created product yazarak create komponentinde emit ettiğimiz datayı yakalıyoruz -->
+  <mat-drawer mode="side" opened class="products-create-container"><app-create
+      (createdProduct)="createdProduct($event)"></app-create></mat-drawer>
+  <mat-drawer-content class="products-container"><app-list></app-list></mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,129 @@
+<div class="row justify-content-between" id="content" style="margin-top: 1%;">
+  <div class="col-md-2 col-sm-1">
+    <div class="btn-group">
+      <button class="btn btn-light btn-sm dropdown-toggle" style="position: absolute; margin-top: -75px;" type="button"
+        data-mdb-toggle="dropdown" aria-expanded="false">
+        <b>filters</b>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" style="width: 300px; margin-top: 20px;" href="#">Price</a></li>
+        <li>
+          <hr />
+        </li>
+        <li><a class="dropdown-item" href="#">Color</a></li>
+        <li>
+          <hr />
+        </li>
+        <li><a class="dropdown-item" href="#">Brand</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <section id="content" class="container">
+
+      <!-- Card deck -->
+      <div class="card-deck row">
+        <!-- -->
+
+        <div class="col-sm-11 col-md-3 justify-content-center" *ngFor="let product of products">
+          <!-- Card -->
+          <!-- <div class="card">
+
+            <div class="view overlay">
+              <a href="/products/details">
+                <img *ngIf="!product.productImageFiles.length" style="height: 100px; width: 100px;" class="card-img-top"
+                  src="https://angularsale.blob.core.windows.net/photo-images/f94689ec-a4f1-47a3-8c4e-b816372cec90.jpg"
+                  alt="Card image cap">
+                <img *ngIf="product.productImageFiles.length" style="height: 100px; width: 100px;" class="card-img-top"
+                  src="{{baseUrl.url}}/{{product.imagePath}}" alt="Card image cap">
+              </a>
+            </div>
+
+            <div class="card-body" >
+
+              <a href="#" style="text-align: start;color: #9bbdd2;">Categories</a>
+              <p >{{product.name}}</p>
+              <a >{{product.price | currency:'$'}}</a>
+              <br>
+              <button (click)="addToBasket(product)" class="btn btn-light-blue btn-md" style="text-align: center;"
+                >Purchase</button>
+
+            </div>
+
+          </div> -->
+
+          <!-- Card -->
+
+          <div class="card-sl" id="pcard" style="font-family: Varela Round;">
+
+            <div class="card-image">
+
+              <a target="_blank" [routerLink]="['/products/details', product.id]">
+                <img *ngIf="!product.productImageFiles.length" class="card-img-top"
+                  src="https://angularsale.blob.core.windows.net/photo-images/pms-1678361275-17863547-800x800-85.png"
+                  alt="Card image cap">
+                <img *ngIf="product.productImageFiles.length" class="card-img-top"
+                  src="{{baseUrl.url}}/{{product.imagePath}}" alt="Card image cap">
+              </a>
+            </div>
+
+            <!-- <a class="card-action" href="#"><i class="fa fa-heart"></i></a> -->
+            <div class="card-heading" style="height: 60px;">
+              <a target="_blank" href="/products/brands/{{product.brand}}" style="color: black;">{{product.brand}}</a> {{product.name}}
+            </div>
+            <div class="card-text">
+              {{product.price | currency:'$'}}
+            </div>
+            <a (click)="addToBasket(product)" class="card-button" style="cursor: pointer;"> Purchase</a>
+          </div>
+        </div>
+
+
+        <!--------------------------------------------------------------------------------------------->
+
+
+        <!--------------------------------------------------------------------------------------------->
+
+
+        <!-- -->
+      </div>
+      <!-- Card deck -->
+
+    </section>
+  </div>
+  <div class="col-md-2">
+
+  </div>
+</div>
+
+<div class="row" *ngIf="products?.length < 1">
+  <div class="container">
+    <div class="col" style="min-height: 700px;">
+      <div class="alert alert-warning" role="alert" style="text-align: center;">
+        No Products
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="row" style="margin-left: 42%;" *ngIf="!(products?.length < 1)">
+  <nav aria-label="...">
+    <ul class="pagination pagination-circle">
+
+      <li class="page-item">
+        <a class="page-link" [routerLink]="[linkUrl, currentPage - 1 <= 0 ? 1 : currentPage - 1]">Previous</a>
+      </li>
+
+      <li *ngFor="let page of pageList" class="page-item" routerLinkActive="active" aria-current="page">
+        <a class="page-link" [routerLink]="[linkUrl, page]">{{page}} </a>
+      </li>
+
+      <li class="page-item">
+        <a class="page-link"
+          [routerLink]="[linkUrl, currentPage + 1 >= totalPageCount ? totalPageCount : currentPage + 1]">Next</a>
+      </li>
+
+    </ul>
+  </nav>
+</div>

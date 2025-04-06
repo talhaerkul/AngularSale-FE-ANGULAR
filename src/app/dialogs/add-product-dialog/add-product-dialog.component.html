@@ -1,0 +1,45 @@
+<mat-dialog-content class="mat-typography">
+
+  <h1>Add Product</h1>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-5">
+      <div class="row">
+        <mat-form-field class="product-create">
+          <mat-label>Name</mat-label>
+          <input matInput #txtName>
+        </mat-form-field>
+      </div>
+      <div class="row"><mat-form-field class="product-create">
+          <mat-label>Brand</mat-label>
+          <input matInput #txtBrand>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="product-create">
+          <mat-label>Description</mat-label>
+          <input matInput type="text" #txtDescription>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="product-create">
+          <mat-label>Price</mat-label>
+          <input matInput type="number" min="0" #txtPrice>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="product-create">
+          <mat-label>Stock</mat-label>
+          <input matInput type="number" min="0" #txtStock>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="data" (click)="create(txtName, txtBrand, txtDescription, txtPrice, txtStock)"
+    cdkFocusInitial style="color: rgb(52, 52, 223);">Create</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

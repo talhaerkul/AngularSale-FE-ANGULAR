@@ -1,0 +1,60 @@
+<mat-dialog-content class="mat-typography">
+
+
+  <h1>Update Product</h1>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-5">
+      <div class="row">
+        <mat-form-field class="product-create">
+          <mat-label>Name</mat-label>
+          <input matInput value="{{product.name}}" #txtName>
+        </mat-form-field>
+      </div>
+      <div class="row"><mat-form-field class="product-create">
+          <mat-label>Brand</mat-label>
+          <input matInput value="{{product.brand}}" #txtBrand>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="product-create">
+          <mat-label>Description</mat-label>
+          <input matInput type="text" value="{{product.description}}" #txtDescription>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="product-create">
+          <mat-label>Price</mat-label>
+          <input matInput type="number" min="0" value="{{product.price}}" #txtPrice>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="product-create">
+          <mat-label>Stock</mat-label>
+          <input matInput type="number" min="0" value="{{product.stock}}" #txtStock>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <div *ngFor="let category of productCategories">
+        <input (change)="onChange(category.name)" type="checkbox" value="{{ category.name }}" checked/> {{category.name}}
+      </div>
+      <div *ngFor="let category of categories">
+        <input (change)="onChange(category.name)" type="checkbox" value="{{ category.name }}" /> {{category.name}}
+      </div>
+    </div>
+    <div class="col-md-2">
+      <a (click)="deleteProduct()" class="card-button"> Delete</a>
+    </div>
+  </div>
+
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="data" (click)="update(txtName, txtBrand, txtDescription, txtPrice, txtStock)"
+    cdkFocusInitial style="color: rgb(52, 52, 223);">Complete</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

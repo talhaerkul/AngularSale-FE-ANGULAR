@@ -1,0 +1,420 @@
+
+
+@import"https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Raleway&display=swap";
+
+:root {
+    --fontfamily1: "Raleway", "Hind Madurai", sans-serif;
+    --fontfamily2: "Hind Madurai", "Raleway", sans-serif;
+    --red1: #f51720;
+    --blue1: #4990e1;
+    --white1: #f5f5f5;
+    --white2: #f2f2f2;
+    --white3: #ffffff;
+    --gray1: #646464;
+    --gray2: #4b4b4b;
+    --black1: #090909;
+    --green1: #4b9b44;
+    --fontsize1: 40px;
+    --fontsize2: 15px;
+    --fontsize3: 14px;
+    --fontsize4: 13px;
+    --fontsize5: 12px
+}
+
+ header, nav {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+input.search-input{
+    font-family: "Raleway", "Hind Madurai", sans-serif;
+}
+
+header {
+    font-family: "Hind Madurai", "Raleway", sans-serif;
+}
+
+a {
+    text-decoration: none
+}
+
+body {
+    background-color: #cee0e6;
+    height: 50vh
+}
+
+main {
+    padding-top: 50px;
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    box-shadow: inset 0px 165px 26px -156px rgba(0, 0, 0, .15)
+}
+
+@media only screen and (max-width: 900px) {
+    :root {
+        --fontsize2: 13px;
+        --fontsize3: 12px
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    :root {
+        --fontsize4: 12px;
+        --fontsize5: 11.5px
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    main {
+        position: absolute;
+        top: 122px
+    }
+}
+
+
+
+
+header {
+  position: relative;
+  height: 90px;
+  background-color: #4990e1
+}
+
+div.header-left-menu {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 25px;
+  left: 180px
+}
+
+#loginBtn{
+  background-color: #f5f5f5;
+  color: #4990e1;
+}
+
+#loginBtn:hover{
+  background-color: #4b4b4b;
+  color: #f5f5f5;
+}
+
+div.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%
+}
+
+.header-left-menu a h1.brand {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 300;
+  color: #f5f5f5;
+  cursor: pointer;
+}
+
+div.header-container div.search-container {
+  display: flex;
+  align-items: center
+}
+
+div.header-container div.search-container input.search-input {
+  width: 500px;
+  height: 32px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 15px;
+  color: #4b4b4b;
+  background-color: #f5f5f5;
+  padding-left: 10px;
+  margin-left: 5px
+}
+
+div.header-container div.search-container input.search-input:focus {
+  width: 500px;
+  border: var(--border1);
+  outline: none;
+  font-weight: 600
+}
+
+div.header-container div.search-container input.search-input:focus+i.search-icon {
+  background-color: #4b4b4b;
+  color: #f5f5f5
+}
+
+div.header-container div.search-container i.search-icon {
+  font-size: 20px;
+  border-radius: 0 5px 5px 0;
+  color: #4990e1;
+  background-color: #f5f5f5;
+  transition: color .1s, background-color .1s;
+  padding: 6px 5px;
+  margin-right: 5px;
+  cursor: pointer
+}
+
+div.header-container div.search-container i.search-icon:hover {
+  background-color: #4b4b4b;
+  color: #f5f5f5
+}
+
+div.header-right-menu {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 25px;
+  right: 30px
+}
+
+
+@media only screen and (max-width: 1400px) {
+  input.search-input {
+      width: 280px !important
+  }
+
+  input.search-input:focus {
+      width: 330px !important
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  div.header-container {
+      justify-content: flex-start;
+      margin-left: 35px
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  div.header-container {
+      margin-left: 15px
+  }
+
+  div.header-right-menu {
+      right: 10px
+  }
+
+  :root {
+      --fontsize1: 35px
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  div.location {
+      display: none
+  }
+
+  a.dropdown-item#location-link {
+      display: block !important
+  }
+
+  input.search-input:focus {
+      width: 300px !important
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  div.search-container {
+      position: absolute;
+      top: 90px;
+      left: 0;
+      width: 100%
+  }
+
+  div.search-container input.search-input {
+      width: 100% !important;
+      border-radius: 0 !important;
+      margin-left: 0 !important
+  }
+
+  div.search-container i.search-icon {
+      border-radius: 0 !important;
+      margin-right: 0 !important
+  }
+
+  div.basket {
+      display: none
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  div.header-container {
+      margin-left: 5px !important
+  }
+
+  div.header-right-menu {
+      right: 0 !important
+  }
+}
+
+@media only screen and (max-width: 200px) {
+  div.dropdown-container {
+      padding: 12px 8px !important
+  }
+}
+
+
+
+
+
+nav {
+  display: block;
+  height: 56px;
+  background-color: #f5f5f5
+}
+
+div.nav-list-container {
+  position: relative;
+  margin: 0 360px;
+  height: 100%
+}
+
+div.nav-list-container div.nav-list {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+  height: 100%;
+  width: 100%
+}
+
+div.nav-list-container div.nav-list div.nav-item {
+  height: 100%;
+}
+
+div.nav-list-container div.nav-list div.nav-item:hover div.nav-item-dropdown {
+  display: block;
+}
+
+div.nav-list-container div.nav-list div.nav-item:hover h3.nav-item-header a{
+  background-color: #4990e1;
+  color: #f5f5f5
+}
+
+div.nav-list-container div.nav-list div.nav-item h3.nav-item-header a{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 56px;
+  color: #646464;
+  font-size: 14px;
+  padding: 0 15px;
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+div.nav-list-container div.nav-list div.nav-item div.nav-item-dropdown {
+  display: none;
+  height: max-content;
+  width: 100%;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  background-color: #f5f5f5;
+  border-bottom: 10px solid #4990e1;
+  border-radius: 0 0 5px 5px;
+  z-index: 996;
+}
+
+div.nav-list-container div.nav-list div.nav-item div.nav-item-dropdown div.dropdown-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 0 20px
+}
+
+div.nav-list-container div.nav-list div.nav-item div.nav-item-dropdown div.dropdown-container div.dropdown-item-group a.group-header {
+  display: block;
+  color: #4990e1;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 10px 20px 5px 0px;
+  padding: 2px
+}
+
+div.nav-list-container div.nav-list div.nav-item div.nav-item-dropdown div.dropdown-container div.dropdown-item-group a.group-header:hover {
+  background-color: #4990e1;
+  color: #f5f5f5
+}
+
+div.nav-list-container div.nav-list div.nav-item div.nav-item-dropdown div.dropdown-container div.dropdown-item-group a.group-item {
+  display: block;
+  color: #646464;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 5px 20px 5px 0px
+}
+
+div.nav-list-container div.nav-list div.nav-item div.nav-item-dropdown div.dropdown-container div.dropdown-item-group a.group-item:hover {
+  text-decoration: underline;
+  color: #4990e1
+}
+
+@media only screen and (max-width: 1600px) {
+  div.nav-list-container {
+      margin: 0 300px
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  div.nav-list-container {
+      margin: 0 250px
+  }
+
+  h3.nav-item-header {
+      padding: 0 10px !important
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  div.nav-list-container {
+      margin: 0 200px
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  div.nav-list-container {
+      margin: 0 150px
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  div.nav-list-container {
+      margin: 0 100px
+  }
+
+  h3.nav-item-header {
+      padding: 0 7.5px !important
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  div.nav-list-container {
+      margin: 0 50px
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  div.nav-list-container {
+      margin: 0
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  a.group-header {
+      margin: 5px 20px 5px 0px
+  }
+
+  div.nav-item-dropdown div.dropdown-container {
+      margin: 5px 0 0 20px
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  nav {
+      display: none
+  }
+}

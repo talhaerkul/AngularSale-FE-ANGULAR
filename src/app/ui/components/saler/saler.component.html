@@ -1,0 +1,66 @@
+<div class="container" >
+
+  <div class="row mt-5">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+      <div class="card" style="background-color: #bbdae3;">
+        <div class="card-header">
+          <img src="../../../../assets/img/saler.jpg" class="rounded-circle" height="50"
+            alt="Black and White Portrait of a Man" loading="lazy" />
+          <a style="color: black; margin-left: 15px;font-size: larger;"><b>{{salerUsername}}'s Products For Sale</b></a>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-sm-11 col-md-4 justify-content-center" *ngFor="let product of products">
+
+          <div class="card-sl" id="pcard" style="font-family: Varela Round;">
+
+            <div class="card-image">
+
+              <a target="_blank" href="/products/details/{{product.id}}">
+                <img *ngIf="!product.productImageFiles.length" class="card-img-top"
+                  src="https://angularsale.blob.core.windows.net/photo-images/pms-1678361275-17863547-800x800-85.png"
+                  alt="Card image cap">
+                <img *ngIf="product.productImageFiles.length" class="card-img-top"
+                  src="{{baseUrl.url}}/{{product.imagePath}}" alt="Card image cap">
+              </a>
+            </div>
+
+            <!-- <a class="card-action" href="#"><i class="fa fa-heart"></i></a> -->
+            <div class="card-heading">
+              <a target="_blank" href="/products/brands/{{product.brand}}" style="color: black;">{{product.brand}}</a> {{product.name}}
+            </div>
+            <div class="card-text">
+              {{product.price | currency:'$'}}
+            </div>
+            <a (click)="addToBasket(product)" class="card-button" style="cursor: pointer;"> Purchase</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left: 42%;" *ngIf="!(products?.length < 1)">
+    <nav aria-label="...">
+      <ul class="pagination pagination-circle">
+
+        <li class="page-item">
+          <a class="page-link" [routerLink]="[linkSaler, currentPage - 1 <= 0 ? 1 : currentPage - 1]">Previous</a>
+        </li>
+
+        <li *ngFor="let page of pageList" class="page-item" routerLinkActive="active" aria-current="page">
+          <a class="page-link" [routerLink]="[linkSaler, page]">{{page}} </a>
+        </li>
+
+        <li class="page-item">
+          <a class="page-link"
+            [routerLink]="[linkSaler, currentPage + 1 >= totalPageCount ? totalPageCount : currentPage + 1]">Next</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+
+</div>

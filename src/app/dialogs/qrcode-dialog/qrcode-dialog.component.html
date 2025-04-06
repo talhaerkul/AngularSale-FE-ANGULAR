@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <mat-form-field class="product-create">
+        <mat-label>Stock</mat-label>
+        <input matInput type="number" min="0" value="0" #txtStock>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+
+<ngx-scanner-qrcode #scanner="scanner" (event)="onEvent($event)"></ngx-scanner-qrcode>
+
+
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="close()" id="btnClose">Close</button>
+</div>

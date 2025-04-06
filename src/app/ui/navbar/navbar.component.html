@@ -1,0 +1,436 @@
+<header>
+  <div class="header-container">
+    <div class="header-left-menu">
+      <a href="/">
+        <h1 class="brand">ERKUL</h1>
+      </a>
+    </div>
+    <div class="search-container">
+      <input class="search-input" type="text" placeholder="Ürün, kategori veya marka ara" autocomplete="off">
+      <i class="search-icon fa fa-search" aria-hidden="true"></i>
+    </div>
+    <div class="header-right-menu">
+      <a *ngIf="!authService.isAuthenticated" type="button" id="loginBtn" class="btn btn-link px-3 me-2" href="/login">
+        Login
+      </a>
+      <a *ngIf="!authService.isAuthenticated" type="button" class="btn btn-warning me-3" href="/register">
+        Sign up
+      </a>
+      <a *ngIf="authService.isAuthenticated" class="text-reset me-3" aria-current="page" routerLink="basket"
+        style="margin-top: 12px;">
+        <span class="badge rounded-pill badge-notification bg-danger"
+          style="margin-top: -15px; margin-left: 20px;">1</span>
+        <i class="fas fa-shopping-cart fa-xl" style="color: white;"> Cart</i>
+      </a>
+      <div *ngIf="authService.isAuthenticated" class="dropdown">
+        <a class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar" role="button"
+          data-mdb-toggle="dropdown" aria-expanded="false">
+          <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="50"
+            alt="Black and White Portrait of a Man" loading="lazy" />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+          <li>
+            <a class="dropdown-item" href="#">My profile</a>
+          </li>
+          <li>
+            <a *ngIf="authService.isAuthenticated" class="dropdown-item" href="/admin">Admin</a>
+          </li>
+          <li>
+            <a *ngIf="authService.isAuthenticated" class="dropdown-item" href="/saler/showcase/admin">Showcase</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/orders">Orders</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" (click)="signOut()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-list-container">
+    <div class="nav-list">
+      <div class="nav-item">
+        <h3 class="nav-item-header"><a href="/products/categories/Electronic">Electronic</a></h3>
+        <div class="nav-item-dropdown">
+          <div class="dropdown-container">
+            <div class="dropdown-item-group">
+              <a class="group-header" href="/products/categories/Computer">Computer</a>
+              <a class="group-item" href="/products/categories/Keyboard">Keyboard</a>
+              <a class="group-item" href="/products/categories/Mouse">Mouse</a>
+              <a class="group-item" href="/products/categories/GameConsole">Game Console</a>
+
+            </div>
+            <div class="dropdown-item-group">
+              <a class="group-header" href="/products/categories/Tablet">Tablet</a>
+
+            </div>
+            <div class="dropdown-item-group">
+              <a class="group-header" href="/products/categories/Telephone">Telephone</a>
+              <a class="group-item" href="/products/categories/TelephoneAccessory">Telephone Accessory</a>
+
+            </div>
+            <div class="dropdown-item-group">
+              <a class="group-header" href="/products/categories/Tv">Tv</a>
+
+
+            </div>
+            <div class="dropdown-item-group">
+              <a class="group-header" href="/products/categories/HouseholdAppliances">Household Appliances</a>
+
+            </div>
+            <div class="dropdown-item-group">
+              <a class="group-header" href="/products/categories/Camera">Camera</a>
+
+
+            </div>
+            <div class="dropdown-item-group">
+              <a class="sf-ChildMenuItems-NH40QlThD607UsFlHXT8" href="/products/categories/Computer">
+                <img src="../../../assets/img/computer.png">
+              </a>
+              <a class="sf-ChildMenuItems-NH40QlThD607UsFlHXT8" href="/products/categories/Tv">
+                <img src="../../../assets/img/tv.png">
+              </a>
+              <a class="sf-ChildMenuItems-NH40QlThD607UsFlHXT8" href="/products/categories/Camera">
+                <img src="../../../assets/img/camera.jpeg">
+              </a>
+              <a class="sf-ChildMenuItems-NH40QlThD607UsFlHXT8" href="/products/categories/GameConsole">
+                <img src="../../../assets/img/gameconsole.png">
+              </a>
+              <a class="sf-ChildMenuItems-NH40QlThD607UsFlHXT8" href="/products/categories/Telephone">
+                <img src="../../../assets/img/telephone.png">
+              </a>
+              <a class="sf-ChildMenuItems-NH40QlThD607UsFlHXT8" href="/products/categories/TelephoneAccessory">
+                <img src="../../../assets/img/telephoneaccessory.png">
+              </a>
+            </div>
+            <div class="dropdown-item-group">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="nav-item">
+        <h3 class="nav-item-header"><a href="/products/categories/Fashion">Fashion</a></h3>
+        <div class="nav-item-dropdown">
+          <div class="dropdown-container">
+            <div class="dropdown-item-group">
+              <a class="group-header" href="/products/categories/Men">Men</a>
+              <a class="group-item" href="/products/categories/MenClothes">Clothes</a>
+              <a class="group-item" href="/products/categories/MenShoes">Shoes</a>
+              <a class="group-item" href="/products/categories/MenAccessory">Accessory</a>
+              <a class="group-item" href="/products/categories/MenJewerly">Jewerly</a>
+
+            </div>
+            <div class="dropdown-item-group">
+              <a class="group-header" href="/products/categories/Women">Women</a>
+              <a class="group-item" href="/products/categories/WomenClothes">Clothes</a>
+              <a class="group-item" href="/products/categories/WomenShoes">Shoes</a>
+              <a class="group-item" href="/products/categories/WomenAccessory">Accessory</a>
+              <a class="group-item" href="/products/categories/WomenJewerly">Jewerly</a>
+
+            </div>
+
+            <div class="dropdown-container">
+              <a class="sf-ChildMenuItems-NH40QlThD607UsFlHXT8" href="/products/categories/Women">
+                <img src="../../../assets/img/women.png">
+              </a>
+              <a class="sf-ChildMenuItems-NH40QlThD607UsFlHXT8" href="/products/categories/Men">
+                <img src="../../../assets/img/men.png">
+              </a>
+            </div>
+            <div class="dropdown-item-group">
+              <a class="sf-ChildMenuItems-NH40QlThD607UsFlHXT8" href="/products/categories/WomenShoes">
+                <img src="../../../assets/img/womenshoes.png">
+              </a>
+              <a class="sf-ChildMenuItems-NH40QlThD607UsFlHXT8" href="/products/categories/MenShoes">
+                <img src="../../../assets/img/menshoes.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="nav-item">
+        <h3 class="nav-item-header"><a href="">Home, Living, Stationery, Office</a></h3>
+        <div class="nav-item-dropdown">
+          <div class="dropdown-container">
+            <div class="dropdown-item-group">
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+
+            </div>
+            <div class="dropdown-item-group">
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+
+            </div>
+
+            <div>
+              <!-- <div class="dropdown-item-group">
+
+                <a href="">
+                  <img src="https://design.hepsiburada.net/assets/storefront/banners/09-08-2019_1591170600751_1.png">
+                </a>
+                <a href="">
+                  <img src="https://design.hepsiburada.net/assets/storefront/banners/13-11-2018_1591170622538_1.png">
+                </a>
+                <a href="https://www.hepsiburada.com/tv-sehpalari-uniteleri-c-18021336">
+                  <img src="https://design.hepsiburada.net/assets/storefront/banners/09-06-2020_1591691048143_1.png">
+                </a>
+                <a href="">
+                  <img src="https://design.hepsiburada.net/assets/storefront/banners/27-03-2020_1591170615708_1.png">
+                </a>
+                <a href="">
+                  <img src="https://design.hepsiburada.net/assets/storefront/banners/09-06-2020_1591691086311_1.png">
+                </a>
+                <a href="">
+                  <img src="https://design.hepsiburada.net/assets/storefront/banners/05-11-2020_1606984093324_1.png">
+                </a>
+                <a href="">
+                  <img src="https://design.hepsiburada.net/assets/storefront/banners/05-11-2020_1606984155810_1.png">
+                </a>
+                <a href="https://www.hepsiburada.com/fabercastell/kirtasiye-ofis-urunleri-c-2147483643">
+                  <img src="https://design.hepsiburada.net/assets/storefront/banners/05-11-2020_1606984171985_1.png">
+                </a>
+                <a href="">
+                  <img src="https://images.hepsiburada.net/banners/0/banner_20230320105438.jpeg">
+                </a>
+                <a href="">
+                  <img src="https://design.hepsiburada.net/assets/storefront/banners/03-12-2020_1606984250780_1.png">
+                </a>
+                <a href="">
+                  <img src="https://images.hepsiburada.net/banners/0/banner_20220420144156.jpeg">
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <h3 class="nav-item-header"><a href="">Auto, Garden, Construction Market</a></h3>
+        <div class="nav-item-dropdown">
+          <div class="dropdown-container">
+            <div class="dropdown-item-group">
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+
+            </div>
+
+            <!-- <div class="dropdown-item-group" style="width: 500px;">
+              <a class="" href=""><img
+                  src="https://design.hepsiburada.net/assets/storefront/banners/24-03-2020_1618818116037_1.png">
+              </a>
+              <a class="" href=""><img src="https://images.hepsiburada.net/banners/0/banner_20210802142905.png">
+              </a>
+              <a class="" href=""><img
+                  src="https://design.hepsiburada.net/assets/storefront/banners/24-03-2020_1618818164714_1.png">
+              </a>
+              <a class="" href=""><img src="https://images.hepsiburada.net/banners/0/banner_20210802142919.png">
+              </a>
+              <a class="" href=""><img
+                  src="https://design.hepsiburada.net/assets/storefront/banners/24-03-2020_1618818182657_1.png">
+              </a>
+              <a class="" href=""><img src="https://images.hepsiburada.net/banners/0/banner_20210802142933.png">
+              </a>
+              <a class="" href=""><img
+                  src="https://design.hepsiburada.net/assets/storefront/banners/24-03-2020_1618818217989_1.png">
+              </a>
+              <a class="" href=""><img src="https://images.hepsiburada.net/banners/0/banner_20210802142943.png">
+              </a>
+              <a class="" href=""><img src="https://images.hepsiburada.net/banners/0/banner_20230308120841.png">
+              </a>
+              <a class="" href=""><img src="https://images.hepsiburada.net/banners/0/banner_20221208143137.png">
+              </a>
+              <a class="" href=""><img src="https://images.hepsiburada.net/banners/0/banner_20211018085552.png">
+              </a>
+              <a class="" href=""><img
+                  src="https://design.hepsiburada.net/assets/storefront/banners/19-04-2021_1618818444735_1.png">
+              </a>
+              <a class="" href=""><img src="https://images.hepsiburada.net/banners/0/banner_20210802143012.png"></a>
+              <a class="" href=""><img src="https://images.hepsiburada.net/banners/0/banner_20220422095747.png">
+              </a>
+            </div> -->
+          </div>
+
+        </div>
+      </div>
+      <div class="nav-item">
+        <h3 class="nav-item-header"><a href="">Mom, Baby, Toy</a></h3>
+        <div class="nav-item-dropdown">
+          <div class="dropdown-container">
+            <div class="dropdown-item-group">
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+
+            </div>
+            <div class="dropdown-item-group">
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <h3 class="nav-item-header"><a href="">Spor, Outdoor</a></h3>
+        <div class="nav-item-dropdown">
+          <div class="dropdown-container">
+            <div class="dropdown-item-group">
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <h3 class="nav-item-header"><a href="">Cosmetics, Personal Care</a></h3>
+        <div class="nav-item-dropdown">
+          <div class="dropdown-container">
+            <div class="dropdown-item-group">
+              <a class="group-header" href="">K</a>
+              <a class="group-item" href=""></a>
+
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <h3 class="nav-item-header"><a href="">Supermarket, Pet Shop</a></h3>
+        <div class="nav-item-dropdown">
+          <div class="dropdown-container">
+            <div class="dropdown-item-group">
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <h3 class="nav-item-header"><a href="">Book, Music, Movie, Hobby</a></h3>
+        <div class="nav-item-dropdown">
+          <div class="dropdown-container">
+            <div class="dropdown-item-group">
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+            </div>
+            <div class="dropdown-item-group">
+              <a class="group-header" href=""></a>
+              <a class="group-item" href=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Navbar -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius: 20px;">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand mt-2 mt-lg-0" href="/" style="color: rgb(5, 120, 181);">
+        AngularSale
+      </a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" style="color: rgb(5, 120, 181);" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: rgb(5, 120, 181);" aria-current="page" routerLink="products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="authService.isAuthenticated" class="nav-link" style="color: black;" aria-current="page"
+            routerLink="admin">Admin</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center">
+        <a *ngIf="!authService.isAuthenticated" type="button" class="btn btn-link px-3 me-2" href="/login">
+          Login
+        </a>
+        <a *ngIf="!authService.isAuthenticated" type="button" class="btn btn-primary me-3" href="/register">
+          Sign up for free
+        </a>
+      </div>
+      <a *ngIf="authService.isAuthenticated" class="text-reset me-3" aria-current="page" routerLink="basket">
+        <i class="fas fa-shopping-cart fa-lg"></i>
+      </a>
+
+      <div *ngIf="authService.isAuthenticated" class="dropdown">
+        <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button"
+          data-mdb-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-bell fa-lg"></i>
+          <span class="badge rounded-pill badge-notification bg-danger">1</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+          <li>
+            <a class="dropdown-item" href="#">Some news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Another news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="authService.isAuthenticated" class="dropdown">
+        <a class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar" role="button"
+          data-mdb-toggle="dropdown" aria-expanded="false">
+          <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="40"
+            alt="Black and White Portrait of a Man" loading="lazy" />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+          <li>
+            <a class="dropdown-item" href="#">My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/orders">Orders</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" (click)="signOut()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav> -->
+<!-- Navbar -->

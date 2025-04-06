@@ -1,0 +1,127 @@
+
+
+
+#pcard a {
+  text-decoration: none;
+}
+
+#pcard {
+  border-radius: 8px;
+  border: 10px;
+  border-color: gray;
+  margin-bottom: 20px;
+  width: 250px;
+}
+
+#pcard .card-image img {
+  height: 250px;
+  width: 250px;
+  border-radius: 8px 8px 0px 0;
+}
+#pcard .card-image{
+  text-align: center;
+}
+
+#pcard .card-action {
+  position: relative;
+  float: right;
+  margin-top: -25px;
+  margin-right: 20px;
+  z-index: 2;
+  color: #E26D5C;
+  background: #fff;
+  border-radius: 100%;
+  padding: 15px;
+  font-size: 15px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+#pcard .card-action:hover {
+  color: #fff;
+  background: #E26D5C;
+  -webkit-animation: pulse 1.5s infinite;
+}
+
+#pcard .card-heading {
+  font-size: 18px;
+  font-weight: bold;
+  background: #fff;
+  padding: 10px 15px;
+}
+
+#pcard .card-text {
+  padding: 10px 15px;
+  background: #fff;
+  font-size: 14px;
+  color: #636262;
+}
+
+#pcard .card-button {
+  display: inline-flex;
+  justify-content: center;
+  padding: 5px 0;
+  width: 33%;
+  cursor: pointer;
+  background-color: #4990e1;
+  color: #fff;
+  border-radius: 8px 8px 8px 8px;
+}
+
+#pcard .card-button:hover {
+  text-decoration: none;
+  background-color: #1D3461;
+  color: #fff;
+
+}
+
+#pcard .card-button-2 {
+  display: inline-flex;
+  justify-content: center;
+  padding: 5px 0;
+  width: 33%;
+  cursor: pointer;
+  background-color: #dd2569;
+  color: #fff;
+  border-radius: 8px 8px 8px 8px;
+}
+
+#pcard .card-button-2:hover {
+  text-decoration: none;
+  background-color: #4b0428;
+  color: #fff;
+
+}
+#pcard .card-button-3 {
+  display: inline-flex;
+  justify-content: center;
+  padding: 5px 0;
+  width: 33%;
+  cursor: pointer;
+  background-color: gray;
+  color: #fff;
+  border-radius: 8px 8px 8px 8px;
+}
+
+#pcard .card-button-3:hover {
+  text-decoration: none;
+  background-color: #5461ae;
+  color: #fff;
+
+}
+#card-button-3 {
+  display: inline-flex;
+  justify-content: center;
+  padding: 5px 0;
+  width: 100px;
+  cursor: pointer;
+  background-color: gray;
+  color: #fff;
+  border-radius: 8px 8px 8px 8px;
+}
+
+#card-button-3:hover {
+  text-decoration: none;
+  background-color: #5461ae;
+  color: #fff;
+
+}

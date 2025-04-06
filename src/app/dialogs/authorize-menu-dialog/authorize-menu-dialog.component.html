@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 mat-dialog-title style="color: rgb(23, 139, 227); margin-top: 16px;">
+    {{data.name}} - Assign Role
+    <span class="badge rounded-pill badge-notification bg-danger"
+      style="margin-left: 3px;">{{roleSelectList.selectedOptions.selected.length}}/{{roles.totalCount}}</span>
+  </h1>
+  <mat-dialog-content class="mat-typography">
+    <mat-selection-list #roleSelectList>
+      <mat-list-option *ngFor="let role of roles.datas" [value]="role" [selected]="isExist(role.name)">
+        {{role.name}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-dialog-content>
+  <div mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial
+      style="color: rgb(23, 139, 227); margin-left: 60px;" (click)="Assign()">Assign</button>
+    <button mat-button (click)="close()">Cancel</button>
+  </div>
+</div>
